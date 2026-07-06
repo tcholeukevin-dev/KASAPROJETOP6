@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.about {
+  padding: 0 100px 60px;
+
+  @include mobile {
+    padding: 0 20px 40px;
+  }
+
+  &__banner {
+    margin-bottom: 48px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__values {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+}

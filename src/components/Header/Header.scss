@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+
+  @include mobile {
+    padding: 20px 20px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-img {
+    height: 38px;
+
+    @include mobile {
+      height: 28px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+
+    @include mobile {
+      gap: 23px;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-text;
+    text-decoration: none;
+
+    @include mobile {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.home {
+  padding: 0 100px 60px;
+
+  @include mobile {
+    padding: 0 20px 40px;
+  }
+
+  &__banner {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__gallery {
+    background-color: $color-gray-light;
+    border-radius: 25px;
+    padding: 40px;
+
+    @include mobile {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+}

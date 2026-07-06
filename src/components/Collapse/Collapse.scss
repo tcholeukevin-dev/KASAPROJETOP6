@@ -1,0 +1,104 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.collapse {
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    background-color: $color-primary;
+    border: none;
+    border-radius: $border-radius-collapse;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    @include mobile {
+      padding: 10px 14px;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+
+    @include mobile {
+      font-size: 13px;
+    }
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    transition: transform 0.25s ease;
+    transform: rotate(0deg);
+
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+
+    &--open {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__body {
+    overflow: hidden;
+    padding: 0 20px;
+    transition: padding 0.4s ease;
+
+    @include mobile {
+      padding: 0 14px;
+    }
+  }
+
+  &__content--open &__body {
+    padding: 20px;
+
+    @include mobile {
+      padding: 14px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $color-text;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    font-size: 18px;
+    color: $color-text;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}

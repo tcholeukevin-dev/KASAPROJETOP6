@@ -1,0 +1,79 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: $border-radius-banner;
+  overflow: hidden;
+  background-color: #c4c4c4;
+
+  @include mobile {
+    height: 255px;
+    border-radius: 5px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+
+    svg {
+      width: 24px;
+      height: 40px;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
+
+      @include mobile {
+        width: 14px;
+        height: 24px;
+      }
+    }
+
+    &--prev {
+      left: 24px;
+
+      @include mobile {
+        left: 12px;
+      }
+    }
+
+    &--next {
+      right: 24px;
+
+      @include mobile {
+        right: 12px;
+      }
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-white;
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+    @include mobile {
+      font-size: 14px;
+      bottom: 10px;
+    }
+  }
+}
